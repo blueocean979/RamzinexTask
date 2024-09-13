@@ -24,7 +24,6 @@ export default function MarketLists() {
     else if (isError) content = <p>Error</p>
     return (
         <div>
-            {/* {Array.isArray(content) ? content.map(market => market.name.fa) : content} */}
             {content}
         </div>
     )
