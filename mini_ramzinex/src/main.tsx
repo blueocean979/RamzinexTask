@@ -5,7 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.tsx'
 import { ApiProvider } from '@reduxjs/toolkit/query/react'
 import { ramzinexApi } from './api/apiSlice.ts'
-import MarketLists from './components/marketsList.tsx'
+import MarketLists from './components/marketList/marketsList.tsx'
+import "./assets/fonts/Vazirmatn.ttf"
 
 const router = createBrowserRouter([
   {
