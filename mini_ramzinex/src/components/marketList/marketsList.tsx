@@ -2,6 +2,7 @@ import { useGetMarketsListQuery } from "../../api/apiSlice"
 import Searchbar from "./searchbar/searchbar";
 import dark_mode from "../../assets/Icons/dark_mode.svg"
 import style from "./marketsList.module.scss"
+import Sort from "../sort/sort";
 
 interface market {
     // [x: string]: unknown;
@@ -30,6 +31,9 @@ export default function MarketLists() {
                 <div className={style.searchbarWrapper}>
                     <Searchbar />
                 </div>
+            </div>
+            <div className={style.sortRow}>
+                <Sort />
             </div>
             {content}
         </div>
