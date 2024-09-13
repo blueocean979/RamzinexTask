@@ -1,19 +1,56 @@
-.row{
+.row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 44px;
     margin-bottom: 1px solid #F5F5F5;
-    .box{
+    color: #222;
+    cursor: pointer;
+
+    .box {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 12px;
 
-        .logo{
+        p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .logo {
             width: 28px;
             height: 28px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .row {
+        .box {
+            p {
+                max-width: 230px;
+                text-align: right;
+                direction: rtl;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .row {
+        .box {
+            p {
+                max-width: 180px;
+                text-align: right;
+                direction: rtl;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     }
 }

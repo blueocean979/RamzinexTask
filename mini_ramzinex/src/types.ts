@@ -10,6 +10,15 @@ export interface market {
         en: string
     };
     buy: number;
+    base_currency_symbol: {
+        en: string
+    }
+    financial:[
+        last24h:{
+            quote_volume: number
+            change_percent: number
+        }
+    ]
 }
 export interface marketsResponse<market>{
     data: market[],

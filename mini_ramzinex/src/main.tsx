@@ -6,6 +6,7 @@ import App from './App.tsx'
 import { ApiProvider } from '@reduxjs/toolkit/query/react'
 import { ramzinexApi } from './api/apiSlice.ts'
 import MarketLists from './components/marketList/marketsList.tsx'
+import MarketDetails from './components/marketDetails/marketDetails.tsx'
 import "./assets/fonts/Vazirmatn.ttf"
 
 const router = createBrowserRouter([
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/marketslist",
-    element: <MarketLists/>
+    element: <MarketLists />
+  },
+  {
+    path: "/marketDetails/:id",
+    element: <MarketDetails />
   }
 ]);
 

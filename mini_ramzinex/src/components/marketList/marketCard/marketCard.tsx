@@ -1,23 +1,28 @@
 import style from "./marketCard.module.scss"
 import { market } from "../../../types"
+import { Link } from "react-router-dom"
+import costDelimiter from "../../../utils/costDelimiter"
+
 interface props {
     marketInfo: market
 }
 export default function MarketCard({ marketInfo }: props) {
     console.log(marketInfo)
-    function numberSplitter(number: number) {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+
     return (
-        <div className={style.row}>
+        <Link
+            className={style.row}
+            to={`/marketDetails/${marketInfo?.pair_id}`}
+            state={{ marketInfo }}
+        >
             <div className={style.box}>
-                {numberSplitter(marketInfo?.buy)}
+                {costDelimiter(marketInfo?.buy)}
                 <div>{marketInfo?.quote_currency_symbol?.en?.toUpperCase()}</div>
             </div>
             <div className={style.box}>
-                {marketInfo.name.fa}
+                <p>{`(${marketInfo?.base_currency_symbol?.en.toUpperCase()}) ${marketInfo.name.fa}`}</p>
                 <img src={marketInfo.logo} alt="logo" className={style.logo} />
             </div>
-        </div>
+        </Link>
     )
 }
