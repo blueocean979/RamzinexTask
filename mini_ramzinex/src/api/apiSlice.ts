@@ -1,16 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-interface market{
-    // [x: string]: unknown;
-    id: string;
-    name: {
-        fa: string,
-        en: string
-    }
-}
-interface marketsResponse<market>{
-    data: market[],
-    status: number
-}
+import { market, marketsResponse } from "../types";
+
 export const ramzinexApi = createApi({
     reducerPath: "ramzinexApi",
     baseQuery: fetchBaseQuery({baseUrl: "https://publicapi.ramzinex.com/exchange/api/v1.0"}),

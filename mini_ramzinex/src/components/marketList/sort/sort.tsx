@@ -1,5 +1,5 @@
 import style from "./sort.module.scss"
-import sort from "../../assets/Icons/Sort.svg"
+import sort from "../../../assets/Icons/sort.svg"
 
 export default function Sort() {
     return (
