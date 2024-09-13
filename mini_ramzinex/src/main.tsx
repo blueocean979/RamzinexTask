@@ -3,11 +3,13 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.tsx'
+import { ApiProvider } from '@reduxjs/toolkit/query/react'
+import { ramzinexApi } from './api/apiSlice.ts'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/marketslist",
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ApiProvider api={ramzinexApi}>
+      <RouterProvider router={router} />
+    </ApiProvider>
   </StrictMode>,
 )
