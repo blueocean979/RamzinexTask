@@ -7,7 +7,8 @@
     margin-bottom: 1px solid #F5F5F5;
     color: #222;
     cursor: pointer;
-
+    background: inherit;
+    color: inherit;
     .box {
         display: flex;
         flex-direction: row;

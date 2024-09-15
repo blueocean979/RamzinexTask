@@ -8,6 +8,7 @@ import { ramzinexApi } from './api/apiSlice.ts'
 import MarketLists from './components/marketList/marketsList.tsx'
 import MarketDetails from './components/marketDetails/marketDetails.tsx'
 import "./assets/fonts/Vazirmatn.ttf"
+import ThemeProvider from './context/themeContext.tsx';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ApiProvider api={ramzinexApi}>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </ApiProvider>
   </StrictMode>,
 )

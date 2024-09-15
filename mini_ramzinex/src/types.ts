@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface market {
     pair_id: string;
     logo: string;
@@ -23,4 +25,21 @@ export interface market {
 export interface marketsResponse<market>{
     data: market[],
     status: number
+}
+export interface sortProps {
+  applySort: (key: string) => void
+}
+export interface searchbarProps{
+    setSearchKey: (key: string) => void
+}
+export interface sortState {
+    key: string
+    type: string
+}
+export interface themeProps {
+        children?: ReactNode
+}
+export interface themeContextType {
+    toggleTheme: () => void,
+    theme: string
 }

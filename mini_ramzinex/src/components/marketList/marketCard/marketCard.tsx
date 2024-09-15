@@ -7,8 +7,6 @@ interface props {
     marketInfo: market
 }
 export default function MarketCard({ marketInfo }: props) {
-    console.log(marketInfo)
-
     return (
         <Link
             className={style.row}

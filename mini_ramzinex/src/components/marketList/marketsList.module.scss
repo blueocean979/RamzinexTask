@@ -1,7 +1,8 @@
 .wrapper {
     width: 100%;
     box-sizing: border-box;
-    
+    height: 100vh;
+
     .row {
         display: flex;
         flex-direction: row;
@@ -29,23 +30,42 @@
         align-items: center;
     }
 
-    .themeImage {
-        width: 24px;
-        height: 24px;
+    .themeButton {
+        width: 28px !important;
+        height: 28px !important;
+        background: none;
+        &:focus {
+            outline: none;
+            border: none;
+        }
 
+        .themeImage {
+            width: 24px;
+            height: 24px;
+
+        }
     }
 
     .listContainer {
         height: calc(100vh - 71px);
         overflow-y: auto;
         padding: 0px 8px;
+        box-sizing: border-box;
     }
+
     ::-webkit-scrollbar {
         width: 4px;
         display: none;
     }
+
     ::-webkit-scrollbar-thumb {
         display: none;
     }
+
+}
+.darkWrapper{
+    @extend .wrapper;
+    background: #222;
+    color: #fff !important;
 
 }
