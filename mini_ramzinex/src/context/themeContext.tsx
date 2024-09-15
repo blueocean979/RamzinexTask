@@ -11,9 +11,11 @@ export const useTheme = (): themeContextType => {
     return context;
 };
 export default function ThemeProvider({ children }: themeProps) {
-    const [theme, setTheme] = useState('light')
+    const [theme, setTheme] = useState(localStorage.getItem('app_theme') || 'light')
     const toggleTheme = () => {
         setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+        localStorage.setItem('app_theme', (theme === 'light' ? 'dark' : 'light'));
+
     }
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
