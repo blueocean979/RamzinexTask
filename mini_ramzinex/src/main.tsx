@@ -3,20 +3,34 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.tsx'
+import { ApiProvider } from '@reduxjs/toolkit/query/react'
+import { ramzinexApi } from './api/apiSlice.ts'
+import MarketLists from './components/marketList/marketsList.tsx'
+import MarketDetails from './components/marketDetails/marketDetails.tsx'
+import "./assets/fonts/Vazirmatn.ttf"
+import ThemeProvider from './context/themeContext.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/marketslist",
-    element: <div>list</div>
+    element: <MarketLists />
+  },
+  {
+    path: "/marketDetails/:id",
+    element: <MarketDetails />
   }
 ]);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ApiProvider api={ramzinexApi}>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </ApiProvider>
   </StrictMode>,
 )
